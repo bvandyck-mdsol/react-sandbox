@@ -1,7 +1,8 @@
 .repos {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .side-panel {
@@ -19,6 +20,7 @@
 table {
   width: 100%;
 }
+
 table,
 td {
   height: 50px;
@@ -82,4 +84,11 @@ tr:nth-child(even) {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+
+.data-table {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
 }

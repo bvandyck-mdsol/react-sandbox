@@ -6,19 +6,21 @@ class UserTable extends Component {
     const { repos, headers, values } = this.props;
 
     return (
-      <table>
-        <thead>
-          <tr>
-            {headers.map(header => (
-              <th> {header} </th>
-            ))}
-          </tr>
-        </thead>
+      <div className="data-table">
+        <table>
+          <thead>
+            <tr>
+              {headers.map(header => (
+                <th> {header} </th>
+              ))}
+            </tr>
+          </thead>
 
-        <tbody>
-          {values !== undefined && values.map(val => <TableRow row={val} />)}
-        </tbody>
-      </table>
+          <tbody>
+            {values !== undefined && values.map(val => <TableRow row={val} />)}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
