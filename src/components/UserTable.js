@@ -2,8 +2,33 @@ import React, { Component } from "react";
 import TableRow from "./TableRow";
 
 class UserTable extends Component {
+    state = {
+    mdsolRepos: [],
+    headers: [],
+    values: []
+  };
+
+  async componentDidMount() {
+    fetch("https://api.github.com/orgs/mdsol/repos")
+      .then(response => {
+        return response.json();
+      })
+      .then(gitHubResponse => {
+        const selectedHeaders = Object.keys(gitHubResponse[0]);
+        const selectedValues = gitHubResponse.map(res => {
+          return Object.values(res).slice(0, 4);
+        });
+
+        this.setState({
+          headers: selectedHeaders.slice(0, 4),
+          values: selectedValues,
+          mdsolRepos: gitHubResponse
+        });
+      });
+  }
+
   render() {
-    const { repos, headers, values } = this.props;
+    const { headers, values } = this.state;
 
     return (
       <div className="data-table">

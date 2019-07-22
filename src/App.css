@@ -26,6 +26,10 @@ td {
   height: 50px;
 }
 
+th {
+  height: 50px;
+}
+
 td {
   padding: 10px;
 }
@@ -84,6 +88,11 @@ tr:nth-child(even) {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
 
