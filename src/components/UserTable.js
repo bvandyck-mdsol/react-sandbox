@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import TableRow from "./TableRow";
+import TopPanel from './TopPanel';
+import MediLoader from './MediLoader'
 
 class UserTable extends Component {
     state = {
     mdsolRepos: [],
     headers: [],
-    values: []
+    values: [],
+    loading: true
   };
 
   async componentDidMount() {
@@ -22,29 +25,39 @@ class UserTable extends Component {
         this.setState({
           headers: selectedHeaders.slice(0, 4),
           values: selectedValues,
-          mdsolRepos: gitHubResponse
+          mdsolRepos: gitHubResponse,
+          loading: false
         });
       });
   }
 
   render() {
-    const { headers, values } = this.state;
+    const { headers, values, loading } = this.state;
 
     return (
-      <div className="data-table">
-        <table>
-          <thead>
-            <tr>
-              {headers.map(header => (
-                <th> {header} </th>
-              ))}
-            </tr>
-          </thead>
+      <div>
+        {loading ?
+          <MediLoader />
+        :
+        <div>
+          <TopPanel />
+          <div className="data-table">
+            <table>
+              <thead>
+                <tr>
+                  {headers.map(header => (
+                    <th> {header} </th>
+                  ))}
+                </tr>
+              </thead>
 
-          <tbody>
-            {values !== undefined && values.map(val => <TableRow row={val} />)}
-          </tbody>
-        </table>
+              <tbody>
+                {values !== undefined && values.map(val => <TableRow row={val} />)}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        }
       </div>
     );
   }
