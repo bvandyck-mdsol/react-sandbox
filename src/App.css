@@ -59,7 +59,45 @@ tr:nth-child(even) {
   padding: 15px;
   width: 300px;
   font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
+
+.env-title {
+  color: rgb(150, 150, 150);
+}
+
+table.modal-table {
+  border: 1px solid;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.modal-table td {
+  border: 1px solid;
+  height: 25px;
+  padding: 3px 10px;
+}
+
+.modal-table thead {
+  background-color: rgb(230, 230, 230);
+}
+
+.env-promo-table {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
+  padding: 5px;
+}
+
 .client-name {
   background-color: rgb(64, 64, 64);
   height: 75px;
