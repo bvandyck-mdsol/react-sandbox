@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TableRow from "./TableRow";
-import TopPanel from './TopPanel';
-import MediLoader from './MediLoader'
+import TopPanel from "./TopPanel";
+import MediLoader from "./MediLoader";
 import TableHeader from "./TableHeader/TableHeader";
 
 class UserTable extends Component {
@@ -30,15 +30,16 @@ class UserTable extends Component {
           loading: false
         });
       });
-  };
+  }
 
   sortTable = (columnIndex, asc) => {
-
     const direction = asc ? 1 : -1;
 
-    this.setState ({
+    this.setState({
       ...this.state,
-      values: this.state.values.sort((a, b) => a[columnIndex] < b[columnIndex] ? direction : -direction)
+      values: this.state.values.sort((a, b) =>
+        a[columnIndex] < b[columnIndex] ? direction : -direction
+      )
     });
   };
 
@@ -49,16 +50,18 @@ class UserTable extends Component {
       <div>
         {loading ? (
           <MediLoader />
-        :
-        <div>
-          <TopPanel />
-          <div className="data-table">
-            <table className="data-table__table">
-              <TableHeader headers = {headers} sortTable={this.sortTable}/>
-              <tbody>
-                {values !== undefined && values.map(val => <TableRow row={val} />)}
-              </tbody>
-            </table>
+        ) : (
+          <div>
+            <TopPanel />
+            <div className="data-table">
+              <table>
+                <TableHeader headers={headers} sortTable={this.sortTable} />
+                <tbody>
+                  {values !== undefined &&
+                    values.map(val => <TableRow row={val} />)}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </div>
