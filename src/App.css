@@ -17,20 +17,22 @@
   width: 100%;
 }
 
+a { 
+  text-decoration: none; 
+}
+
 table {
   width: 100%;
 }
 
 table,
 td {
-  height: 50px;
+  height: 34px;
+  padding: 10px;
 }
 
 th {
-  height: 50px;
-}
-
-td {
+  height: 34px;
   padding: 10px;
 }
 
@@ -44,13 +46,13 @@ tfoot {
   display: flex;
   flex-direction: row;
   height: 55px;
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(229, 229, 229);
   width: 100%;
   padding: 10px;
 }
 
 tr:nth-child(even) {
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(229, 229, 229);
 }
 
 .top-panel__element {
@@ -59,7 +61,7 @@ tr:nth-child(even) {
   font-size: 18px;
 }
 .client-name {
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(64, 64, 64);
   height: 75px;
   width: 100%;
   text-align: center;
@@ -178,3 +180,4 @@ tr:nth-child(even) {
     opacity: 0.5;
   }
 }
+
