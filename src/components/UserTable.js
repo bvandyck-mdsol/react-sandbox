@@ -5,7 +5,7 @@ import MediLoader from './MediLoader'
 import TableHeader from "./TableHeader/TableHeader";
 
 class UserTable extends Component {
-    state = {
+  state = {
     mdsolRepos: [],
     headers: [],
     values: [],
@@ -47,7 +47,7 @@ class UserTable extends Component {
 
     return (
       <div>
-        {loading ?
+        {loading ? (
           <MediLoader />
         :
         <div>
@@ -60,8 +60,7 @@ class UserTable extends Component {
               </tbody>
             </table>
           </div>
-        </div>
-        }
+        )}
       </div>
     );
   }

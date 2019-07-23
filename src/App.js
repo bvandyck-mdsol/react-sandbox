@@ -8,7 +8,7 @@ import Master from "./components/Master";
 import DataQC from "./components/DataQC";
 import Users from "./components/Users";
 import styled from "styled-components";
-import "./App.css";
+import "./styles/app.scss";
 
 const SidePanelIcons = styled.div`
   width: 85px;

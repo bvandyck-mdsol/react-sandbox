@@ -1,0 +1,41 @@
+table {
+  width: 100%;
+}
+
+table,
+td {
+  height: 50px;
+}
+
+th {
+  height: 50px;
+}
+
+td {
+  padding: 10px;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+.data-table {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.top-panel {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  background-color: rgb(215, 215, 215);
+  width: 100%;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(215, 215, 215);
+}
