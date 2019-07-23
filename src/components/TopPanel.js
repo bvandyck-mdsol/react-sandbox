@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from 'react-modal';
-import DataPackage from './DataPackage';
+import DataPackages from './DataPackages';
 import EnvPromotions from './EnvPromotions';
 
 Modal.setAppElement('#root');
@@ -83,7 +83,7 @@ class TopPanel extends React.Component {
           <h2>Environments Promotions</h2>
           <div className="grid-container">
             <div className="grid-item">
-              <DataPackage dataPackages={dataPackages} />
+              <DataPackages dataPackages={dataPackages} />
             </div>
             <div className="grid-item">
               <EnvPromotions environmentName="Dev" promotions={devPromotions} />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DataPackage = (props) => {
+const DataPackages = (props) => {
   const packageRows = props.dataPackages.map((dataPackage) => {
     return (
       <tr>
@@ -28,4 +28,4 @@ const DataPackage = (props) => {
   );
 }
 
-export default DataPackage;
+export default DataPackages;
