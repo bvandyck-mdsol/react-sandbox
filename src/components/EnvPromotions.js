@@ -2,9 +2,9 @@ import React from 'react';
 import { toFormattedDateString } from '../utils/utils';
 
 const EnvPromotions = (props) => {
-  const promotionRows = props.promotions.map((promotion) => {
+  const promotionRows = props.promotions.map((promotion, idx) => {
     return (
-      <tr>
+      <tr key={idx}>
         <td>{promotion.user}</td>
         <td>{toFormattedDateString(promotion.date)}</td>
         <td>{promotion.version}</td>
@@ -14,7 +14,7 @@ const EnvPromotions = (props) => {
 
   return (
     <div>
-      <h3 className="env-title">{props.environmentName}</h3>
+      <h3 className="env-title">{props.envName}</h3>
       <table className="modal-table env-promo-table">
         <thead>
           <tr>

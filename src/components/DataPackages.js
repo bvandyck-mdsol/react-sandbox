@@ -1,9 +1,9 @@
 import React from 'react';
 
 const DataPackages = (props) => {
-  const packageRows = props.dataPackages.map((dataPackage) => {
+  const packageRows = props.dataPackages.map((dataPackage, idx) => {
     return (
-      <tr>
+      <tr key={idx}>
         <td>{dataPackage.name}</td>
         <td>{dataPackage.version}</td>
       </tr>

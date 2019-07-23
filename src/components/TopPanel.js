@@ -60,11 +60,11 @@ const prodPromotions = [
 class TopPanel extends React.Component {
   state = { modalIsOpen: false };
 
-  openModal = () => {
+  handleOpenModal = () => {
     this.setState({ modalIsOpen: true });
   };
 
-  closeModal = () => {
+  handleCloseModal = () => {
     this.setState({ modalIsOpen: false });
   };
 
@@ -72,12 +72,12 @@ class TopPanel extends React.Component {
     return (
       <div className="top-panel">
         <button className="top-panel__element">Data Intake Library</button>
-        <button onClick={this.openModal} className="top-panel__element">
+        <button onClick={this.handleOpenModal} className="top-panel__element">
           Environments
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
+          onRequestClose={this.handleCloseModal}
           contentLabel="Environments Modal"
         >
           <h2>Environments Promotions</h2>
@@ -86,17 +86,17 @@ class TopPanel extends React.Component {
               <DataPackages dataPackages={dataPackages} />
             </div>
             <div className="grid-item">
-              <EnvPromotions environmentName="Dev" promotions={devPromotions} />
+              <EnvPromotions envName="Dev" promotions={devPromotions} />
             </div>
             <div className="grid-item">
-              <EnvPromotions environmentName="QA" promotions={qaPromotions} />
+              <EnvPromotions envName="QA" promotions={qaPromotions} />
             </div>
             <div className="grid-item">
-              <EnvPromotions environmentName="Production" promotions={prodPromotions} />
+              <EnvPromotions envName="Production" promotions={prodPromotions} />
             </div>
           </div>
           
-          <button onClick={this.closeModal} style={{marginTop: "20px", float: "right"}}>
+          <button onClick={this.handleCloseModal} style={{marginTop: "20px", float: "right"}}>
             Close
           </button>
         </Modal>
