@@ -17,27 +17,22 @@
   width: 100%;
 }
 
-a { 
-  text-decoration: none; 
-}
-
-table {
+table.data-table__table {
   width: 100%;
 }
 
-table,
-td {
+table.data-table__table,
+.data-table__table td {
   height: 34px;
   padding: 10px;
 }
 
-th {
+.data-table__table th {
   height: 34px;
   padding: 10px;
 }
 
-thead,
-tfoot {
+.data-table__table thead, tfoot {
   background-color: #333;
   color: #fff;
 }
@@ -51,7 +46,7 @@ tfoot {
   padding: 10px;
 }
 
-tr:nth-child(even) {
+.data-table__table tr:nth-child(even) {
   background-color: rgb(229, 229, 229);
 }
 
@@ -59,7 +54,45 @@ tr:nth-child(even) {
   padding: 15px;
   width: 300px;
   font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
+
+.modal-table-title {
+  color: rgb(150, 150, 150);
+}
+
+table.modal-table {
+  border: 1px solid;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.modal-table td {
+  border: 1px solid;
+  height: 25px;
+  padding: 3px 10px;
+}
+
+.modal-table thead {
+  background-color: rgb(230, 230, 230);
+}
+
+.env-promotions__table {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
+  padding: 5px;
+}
+
 .client-name {
   background-color: rgb(64, 64, 64);
   height: 75px;

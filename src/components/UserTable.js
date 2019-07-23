@@ -53,7 +53,7 @@ class UserTable extends Component {
         <div>
           <TopPanel />
           <div className="data-table">
-            <table>
+            <table className="data-table__table">
               <TableHeader headers = {headers} sortTable={this.sortTable}/>
               <tbody>
                 {values !== undefined && values.map(val => <TableRow row={val} />)}
