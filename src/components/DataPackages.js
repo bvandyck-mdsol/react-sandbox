@@ -11,8 +11,8 @@ const DataPackages = (props) => {
   });
 
   return (
-    <div>
-      <h3 className="env-title">Data Package</h3>
+    <div className="data-package">
+      <h3 className="modal-table-title">Data Package</h3>
       <table className="modal-table">
         <thead>
           <tr>

@@ -17,27 +17,22 @@
   width: 100%;
 }
 
-a { 
-  text-decoration: none; 
-}
-
-table {
+table.data-table__table {
   width: 100%;
 }
 
-table,
-td {
+table.data-table__table,
+.data-table__table td {
   height: 34px;
   padding: 10px;
 }
 
-th {
+.data-table__table th {
   height: 34px;
   padding: 10px;
 }
 
-thead,
-tfoot {
+.data-table__table thead, tfoot {
   background-color: #333;
   color: #fff;
 }
@@ -51,7 +46,7 @@ tfoot {
   padding: 10px;
 }
 
-tr:nth-child(even) {
+.data-table__table tr:nth-child(even) {
   background-color: rgb(229, 229, 229);
 }
 
@@ -64,7 +59,7 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-.env-title {
+.modal-table-title {
   color: rgb(150, 150, 150);
 }
 
@@ -84,7 +79,7 @@ table.modal-table {
   background-color: rgb(230, 230, 230);
 }
 
-.env-promo-table {
+.env-promotions__table {
   text-align: center;
 }
 

@@ -13,9 +13,9 @@ const EnvPromotions = (props) => {
   });
 
   return (
-    <div>
-      <h3 className="env-title">{props.envName}</h3>
-      <table className="modal-table env-promo-table">
+    <div className="env-promotions">
+      <h3 className="modal-table-title">{props.envName}</h3>
+      <table className="modal-table env-promotions__table">
         <thead>
           <tr>
             <td>User</td>
