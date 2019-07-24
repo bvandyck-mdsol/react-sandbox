@@ -7,7 +7,7 @@ const TableHeader = props => {
   const handleClick = (columnIndex) => {
     setSortAsc(!sortAsc);
     props.sortTable(columnIndex, sortAsc)
-  }
+  };
 
   return (
     <thead>              

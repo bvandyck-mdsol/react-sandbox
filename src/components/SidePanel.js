@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import UserTable from "./UserTable";
+import DataIntake from "./DataIntake";
+import DataQC from "./DataQC";
+import Users from "./Users";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const SidePanelIcons = styled.div`
   width: 85px;
@@ -38,6 +42,13 @@ const SidePanel = () => {
         <Link to="/users">
           <div className="side-panel__route"> Users </div>
         </Link>
+      </div>
+      <div className="main-panel">
+        <Route path="/" exact component={UserTable} />
+        <Route path="/data-intake" exact component={DataIntake} />
+        <Route path="/master" component={UserTable} />
+        <Route path="/data-qc" component={DataQC} />
+        <Route path="/users" component={Users} />
       </div>
     </div>)
   }
