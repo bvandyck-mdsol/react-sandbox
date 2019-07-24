@@ -3,14 +3,20 @@ import TableRow from "./TableRow";
 import TopPanel from "./TopPanel";
 import MediLoader from "./MediLoader";
 import TableHeader from "./TableHeader/TableHeader";
+import TableDetailModal from "./TableDetailModal/TableDetailModal";
 
 class UserTable extends Component {
-  state = {
-    mdsolRepos: [],
-    headers: [],
-    values: [],
-    loading: true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      mdsolRepos: [],
+      headers: [],
+      values: [],
+      details: [],
+      rowClicked: false,
+      loading: true
+    };
+  }
 
   async componentDidMount() {
     fetch("https://api.github.com/orgs/mdsol/repos")
@@ -43,8 +49,25 @@ class UserTable extends Component {
     });
   };
 
+  handleOpenDetailModal = row => {
+    const { mdsolRepos } = this.state;
+
+    const rowDetails = mdsolRepos.find(repo => {
+      return repo.id === row[0];
+    });
+
+    this.setState({
+      rowClicked: true,
+      details: rowDetails
+    });
+  };
+
+  closeModal = () => {
+    this.setState({ rowClicked: false });
+  };
+
   render() {
-    const { headers, values, loading } = this.state;
+    const { headers, values, loading, details, rowClicked } = this.state;
 
     return (
       <div>
@@ -58,11 +81,21 @@ class UserTable extends Component {
                 <TableHeader headers={headers} sortTable={this.sortTable} />
                 <tbody>
                   {values !== undefined &&
-                    values.map(val => <TableRow row={val} />)}
+                    values.map(val => (
+                      <TableRow
+                        key={val.id}
+                        openDetailModal={this.handleOpenDetailModal}
+                        row={val}
+                      />
+                    ))}
                 </tbody>
               </table>
             </div>
           </div>
+        )}
+
+        {rowClicked && (
+          <TableDetailModal closeModal={this.closeModal} details={details} />
         )}
       </div>
     );

@@ -1,10 +1,7 @@
 import React from "react";
-import SidePanel from "./components/SidePanel";
 import UserTable from "./components/UserTable";
-import TopPanel from "./components/TopPanel";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import DataIntake from "./components/DataIntake";
-import Master from "./components/Master";
 import DataQC from "./components/DataQC";
 import Users from "./components/Users";
 import styled from "styled-components";

@@ -1,0 +1,42 @@
+.table-detail-modal {
+  width: 1500px;
+  height: 900px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+}
+
+.table-detail-modal__details {
+  margin: 25px;
+  width: 95%;
+  height: 75%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.details {
+  height: 50px;
+  margin: 10px;
+}
+
+.table-detail__header {
+  margin-left: 41px;
+}
+
+.data-details {
+  margin: 15px;
+}
+
+.data-details__key,
+.data-details__value {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.data-details__key {
+  width: 200px;
+  font-weight: 600;
+}
